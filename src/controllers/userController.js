@@ -94,6 +94,12 @@ body.password=hashing
     
 
     let createUser = await userModel.create(body)
+
+    
+   createUser = createUser._doc
+   delete createUser.__v
+
+   
     return res.status(201).send({status:true,message:"Success",data:createUser})
 
 }

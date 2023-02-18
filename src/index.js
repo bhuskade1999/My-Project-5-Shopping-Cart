@@ -3,22 +3,30 @@ const route = require('./route/route')
 const mongoose = require('mongoose')
 const cors = require('cors')
 const multer= require("multer")
+var path = require("path")
+const env =  require("dotenv")
 
-
+env.config({path: path.join(__dirname,"../.env")})
 const app = express()
+
 app.use(express.json())
+
 app.use(cors())
+
 app.use(multer().any())
 
+
 mongoose.set('strictQuery', false)
-mongoose.connect("mongodb+srv://Bhavi:Bhavi123@cluster1.yydegcy.mongodb.net/group11Database", {
+
+mongoose.connect(process.env.Mongodb_Connect , {
     useNewUrlParser: true
 })
     .then(() => console.log("MongoDB is connected"))
     .catch(err => console.log(err))
 
+
 app.use("/", route)
 
-app.listen(3000, function () {
-    console.log("Express app running on port 3000")
+app.listen(process.env.PORT, function () {
+    console.log("Express app running on port : ", process.env.PORT)
 })

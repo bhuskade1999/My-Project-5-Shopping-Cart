@@ -71,7 +71,7 @@ if(!(req.body)) return res.status(400).send({ status: false, message: "Please pr
     
 if (!orderId) return res.status(400).send({ status: false, message: "Please provide Order ID for updation" })
 if (!mongoose.isValidObjectId(orderId)) return res.status(400).send({ status: false, message: "Invalid Order Id" })
-if (!mongoose.isValidObjectId(userId)) return res.status(400).send({ status: false, message: "Invalid Order Id" })
+if (!mongoose.isValidObjectId(userId)) return res.status(400).send({ status: false, message: "Invalid user Id" })
 if (req.bearerToken !== userId) return res.status(403).send({ status: false, message: "Unauthorised User" })
 let getOrder = await orderModel.findOne({ _id: orderId,userId:userId, isDeleted: false })
 if(!getOrder) return res.status(400).send({ status: false, message: "order does not exist with this orderId or userId" })

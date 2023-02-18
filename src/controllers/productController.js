@@ -22,7 +22,7 @@ const createProduct = async function (req, res) {
 
         if (!description) return res.status(400).send({ status: false, message: "Description is mandatory" })
         description = description.trim()
-        if (!isValidDesc(description)) return res.status(400).send({ status: false, message: "Description should not contain Numeric and special characters" })
+        //if (!isValidDesc(description)) return res.status(400).send({ status: false, message: "Description should not contain Numeric and special characters" })
         data.description = description
 
         if (!price) return res.status(400).send({ status: false, message: "Price is mandatory" })
