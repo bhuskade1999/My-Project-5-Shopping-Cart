@@ -1,4 +1,4 @@
-#Amazone Clone
+# Amazone Clone
 
  ### Developed the backend of a shopping website like Amazon that allows users to register, log in, and perform CRUD operations on the user, product, cart, and order APIs.
 ##
@@ -13,7 +13,6 @@
 
 ### Project Requirement :-
  
-
 
 ## FEATURE I - User
 ### Models
