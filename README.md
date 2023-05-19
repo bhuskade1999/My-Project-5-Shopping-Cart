@@ -7,6 +7,7 @@
  - NodeJs
  - Express
  - Mongodb
+ - AWS S3
  
  ##
 
